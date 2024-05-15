@@ -48,6 +48,11 @@
             <artifactId>spring-integration-mqtt</artifactId>
             <version>5.5.0</version>
         </dependency>
+        <dependency>
+            <groupId>org.json</groupId>
+            <artifactId>json</artifactId>
+            <version>20230227</version>
+        </dependency>
     </dependencies>
     <dependencyManagement>
         <dependencies>
