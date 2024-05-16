@@ -27,10 +27,10 @@ public class PayloadBuilderService {
 
     public String getPayloadForSensorReboot(String sensorName) {
         Payload payload = Payload.builder()
-                .channel("0" + Sensor.getSensorNumberFromName(sensorName))
+                .channel("controller".equals(sensorName) ? "ff" : "0" + Sensor.getSensorNumberFromName(sensorName))
                 .type("10")
                 .reversed("ff")
                 .build();
-        return payload.getChannel() + payload.getValue() + payload.getReversed();
+        return payload.getChannel() + payload.getType() + payload.getReversed();
     }
 }

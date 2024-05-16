@@ -10,7 +10,8 @@ import java.util.stream.Collectors;
 @Getter
 public enum Sensor {
     LIGHT(7, "light"),
-    AC(8, "ac");
+    AC(8, "ac"),
+    CONTROLLER(0, "controller");
 
     private int sensorNumber;
     private String sensorName;
