@@ -10,8 +10,8 @@ public class PayloadBuilderService {
     public String getPayloadForTurningSensorOn(String sensorName) {
         Payload payload = Payload.builder()
                 .channel("0" + Sensor.getSensorNumberFromName(sensorName))
-                .value("0100")
-                .reversed("ff")
+                .value("0000")
+                .reversed("FF")
                 .build();
         return payload.getChannel() + payload.getValue() + payload.getReversed();
     }
@@ -19,17 +19,17 @@ public class PayloadBuilderService {
     public String getPayloadForTurningSensorOff(String sensorName) {
         Payload payload = Payload.builder()
                 .channel("0" + Sensor.getSensorNumberFromName(sensorName))
-                .value("0200")
-                .reversed("ff")
+                .value("0100")
+                .reversed("FF")
                 .build();
         return payload.getChannel() + payload.getValue() + payload.getReversed();
     }
 
     public String getPayloadForSensorReboot(String sensorName) {
         Payload payload = Payload.builder()
-                .channel("controller".equals(sensorName) ? "ff" : "0" + Sensor.getSensorNumberFromName(sensorName))
+                .channel("controller".equals(sensorName) ? "FF" : "0" + Sensor.getSensorNumberFromName(sensorName))
                 .type("10")
-                .reversed("ff")
+                .reversed("FF")
                 .build();
         return payload.getChannel() + payload.getType() + payload.getReversed();
     }
