@@ -27,7 +27,8 @@ public class MqttClientConfig {
 
             return mqttClient;
         } catch (MqttException e) {
-            throw new MqttClientException(e.getMessage(), e);
+            log.error("Failed to connect to MQTT broker at {}: {}", host, e.getMessage());
+            throw new MqttClientException("Failed to connect to MQTT broker", e);
         }
     }
 
