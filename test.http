@@ -1,0 +1,11 @@
+###이상치 on 070100FF 빨간 불 on
+GET localhost:8091/sensor/off?sensorName=light&devEui=24E124445D189958
+
+###정상 070000FF 초록 불 on →
+GET localhost:8091/sensor/on?sensorName=light&devEui=24E124445D189958
+
+### 에어컨 멈춤 080100FF 노란 불 off →
+GET localhost:8091/sensor/off?sensorName=ac&devEui=24E124445D189958
+
+### 에어컨 가동 080000FF 노란 불 on →
+GET localhost:8091/sensor/on?sensorName=ac&devEui=24E124445D189958
