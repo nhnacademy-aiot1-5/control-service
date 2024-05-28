@@ -17,18 +17,18 @@ class PayloadBuilderServiceTest {
 
     @Test
     void getPayloadForTurningSensorOn() {
-        Assertions.assertEquals("080100ff", payloadBuilderService.getPayloadForTurningSensorOn("ac"));
-        Assertions.assertEquals("070100ff", payloadBuilderService.getPayloadForTurningSensorOn("light"));
+        Assertions.assertEquals("080000FF", payloadBuilderService.getPayloadForTurningSensorOn("ac"));
+        Assertions.assertEquals("070000FF", payloadBuilderService.getPayloadForTurningSensorOn("light"));
     }
 
     @Test
     void getPayloadForTurningSensorOff() {
-        Assertions.assertEquals("080200ff", payloadBuilderService.getPayloadForTurningSensorOff("ac"));
-        Assertions.assertEquals("070200ff", payloadBuilderService.getPayloadForTurningSensorOff("light"));
+        Assertions.assertEquals("080100FF", payloadBuilderService.getPayloadForTurningSensorOff("ac"));
+        Assertions.assertEquals("070100FF", payloadBuilderService.getPayloadForTurningSensorOff("light"));
     }
 
     @Test
     void getPayloadForSensorReboot() {
-        Assertions.assertEquals("ff10ff", payloadBuilderService.getPayloadForSensorReboot("controller"));
+        Assertions.assertEquals("FF10FF", payloadBuilderService.getPayloadForSensorReboot("controller"));
     }
 }
