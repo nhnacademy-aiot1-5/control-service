@@ -9,3 +9,12 @@ GET localhost:8091/sensor/off?sensorName=ac&devEui=24E124445D189958
 
 ### 에어컨 가동 080000FF 노란 불 on →
 GET localhost:8091/sensor/on?sensorName=ac&devEui=24E124445D189958
+
+###
+POST localhost:8091/dooray/send
+Content-Type: application/json
+
+{
+  "botName": "test",
+  "text": "hi"
+}
